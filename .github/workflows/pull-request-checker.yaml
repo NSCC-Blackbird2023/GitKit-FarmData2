@@ -15,7 +15,7 @@ jobs:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
             
-            core.info(context.payload.organization);
+            core.info(JSON.stringify(context.payload.organization));
             const ORG = context.payload.organization.login;
             const REPO = context.payload.repository.name;
             const REPO_BASE_API_URL = `https://api.github.com/repos/${ORG}/${REPO}`;
